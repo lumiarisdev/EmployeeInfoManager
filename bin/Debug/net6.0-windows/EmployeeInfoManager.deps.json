@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "EmployeeInfoManager/1.0.0": {
+        "runtime": {
+          "EmployeeInfoManager.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EmployeeInfoManager/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

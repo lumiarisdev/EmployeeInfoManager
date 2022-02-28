@@ -1,0 +1,76 @@
+﻿<Window x:Class="EmployeeInfoManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmployeeInfoManager"
+        xmlns:views="clr-namespace:EmployeeInfoManager.Views"
+        xmlns:viewModels="clr-namespace:EmployeeInfoManager.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1280">
+
+    <Window.DataContext>
+        <viewModels:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModels:EmployeeListViewModel}">
+            <views:EmployeeListView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModels:EmployeeViewModel}">
+            <views:EmployeeView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModels:AddEmployeeViewModel}">
+            <views:AddEmployeeView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModels:AddEmployeeNavViewModel}">
+            <views:AddEmployeeNavView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModels:EmployeeNavViewModel}">
+            <views:EmployeeNavView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModels:EmployeeListNavViewModel}">
+            <views:EmployeeListNavView/>
+        </DataTemplate>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="*" MinWidth="100"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <StackPanel Grid.Row="0" Orientation="Vertical" x:Name="NavBar">
+
+                <Button Content="Employee List" Command="{Binding NavCommand}" CommandParameter="employeeList" Margin="0 10 10 3"/>
+
+                <Button Content="Add Employee" Command="{Binding NavCommand}" CommandParameter="addEmployee" Margin="0 3 10 3"/>
+
+                <Button Content="Search Employee" Command="{Binding NavCommand}" CommandParameter="searchEmployee" Margin="0 3 10 3"/>
+
+            </StackPanel>
+
+            <Grid x:Name="NavActions" Grid.Row="1">
+                <ContentControl Content="{Binding CurrentNavViewModel}"/>
+            </Grid>
+            
+        </Grid>
+
+        <Grid x:Name="MainContent" Grid.Column="0">
+            <ContentControl Content="{Binding CurrentViewModel}"/>
+        </Grid>
+        
+    </Grid>
+    
+</Window>
