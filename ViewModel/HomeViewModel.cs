@@ -1,49 +1,75 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EmployeeInfoManager.Model;
+using EmployeeInfoManager.Command;
+using MongoDB.Driver;
 
 namespace EmployeeInfoManager.ViewModel
 {
     public class HomeViewModel : BindableBase
     {
 
-        private Employee searchInput;
-        public Employee SearchInput
+        private string statusMessage;
+        public string StatusMessage
         {
-            get { return searchInput; }
-            set { SetProperty(ref searchInput, value); }
+            get
+            {
+                return statusMessage;
+            }
+            set
+            {
+                SetProperty(ref statusMessage, value);
+            }
+        }
+
+        private int employeeRecordsCount;
+        public int EmployeeRecordsCount
+        {
+            get { return employeeRecordsCount; }
+            set
+            {
+                SetProperty(ref employeeRecordsCount, value);
+            }
+        }
+
+        private int activeEmployeesCount;
+        public int ActiveEmployeesCount
+        {
+            get
+            {
+                return activeEmployeesCount;
+            }
+            set
+            {
+                SetProperty(ref activeEmployeesCount, value);
+            }
         }
 
         public HomeViewModel()
         {
-            SearchInput = new Employee
+
+            if(DBConnection.Instance.client == null || DBConnection.Instance.db == null)
             {
-                Name = "",
-                PreferredName = "",
-                DateOfBirth = DateTime.Today,
-                PhoneNumber = "",
-                PhoneNumber2 = "",
-                Email = "",
-                Email2 ="",
-                Username = "",
-                Alias = "",
-                Address = "",
-                Address2 = "",
-                City = "",
-                ZipCode = 0,
-                DateOfHire = DateTime.Today,
-                Active = true,
-                Temporary = false,
-                JobTitle = "",
-                Department = "",
-                Manager = "",
-                Salary = 0,
-                SSN = 0,
-            };
+                statusMessage = "Failed";
+            } else if(DBConnection.Instance.collection == null)
+            {
+                statusMessage = "Warning | Collection Error";
+            } else
+            {
+                statusMessage = "Connected";
+            }
+            if(DBConnection.Instance.Connected)
+            {
+                EmployeeRecordsCount = DBConnection.Instance.GetAllEmployees().Count();
+                ActiveEmployeesCount = DBConnection.Instance.GetAllCurrentEmployees().Count();
+            }
+
         }
 
     }
+
 }

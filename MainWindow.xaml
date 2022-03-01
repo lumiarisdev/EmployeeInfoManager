@@ -53,11 +53,23 @@
 
                 <Button Content="Search Employee" Command="{Binding NavCommand}" CommandParameter="searchEmployee" Margin="0 3 10 3"/>
 
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Search Employee By: " HorizontalAlignment="Center" MinHeight="15" Margin="0 40 3 0"/>
+                    <ComboBox SelectionChanged="ComboBox_SelectionChanged" Margin="0 3 10 3">
+                        <ComboBoxItem Content="Username" IsSelected="True"/>
+                        <ComboBoxItem Content="Email"/>
+                        <ComboBoxItem Content="Alias"/>
+                    </ComboBox>
+                    <TextBox Text="{Binding SearchInput.Username, Mode=TwoWay}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="75" Width="Auto"  MinHeight="20" MaxHeight="40" Margin="0 3 10 3"/>
+                    <Button Content="Search" HorizontalAlignment="Center" Command="{Binding SearchCommand}" CommandParameter="{Binding SearchInput.Username}" MinWidth="75" Margin="0 3 10 3"/>
+                </StackPanel>
 
                 <Button Content="View Selected" Command="{Binding NavCommand}" CommandParameter="employee" Margin="0 40 10 3"/>
 
             </StackPanel>
 
+            <Button Grid.Row="1" Content="DB Connection" Command="{Binding DBPrompt}" Margin="0 3 10 10"  VerticalAlignment="Bottom"/>
+            
         </Grid>
 
         <Grid x:Name="MainContent" Grid.Column="0">

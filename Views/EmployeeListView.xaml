@@ -39,7 +39,10 @@
                         <TextBlock Text="{Binding Email2}"/>
                     </StackPanel>
                 </StackPanel>
-                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" IsChecked="{Binding Active}"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Active?" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <CheckBox VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" IsChecked="{Binding Active}" IsEnabled="False"/>
+                </StackPanel>
             </StackPanel>
         </DataTemplate>
     </UserControl.Resources>
@@ -51,9 +54,9 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Employee List" MinHeight="30" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+        <TextBlock Text="Employee List" MinHeight="30" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15"/>
 
-        <ListBox ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}" Grid.Row="1"/>
+        <ListBox ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}" Grid.Row="1" BorderThickness="0"/>
 
     </Grid>
 

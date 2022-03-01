@@ -34,12 +34,42 @@ namespace EmployeeInfoManager
         public MongoClient client;
         public IMongoDatabase db;
         public IMongoCollection<Employee> collection;
-        private const string connectionString = "mongodb+srv://ziegw1:EMOv5e5SOsV2EZwI@employeeappcluster.d4xux.mongodb.net/employee_db?retryWrites=true&w=majority";
+        private const string defaultConnection = "mongodb+srv://ziegw1:EMOv5e5SOsV2EZwI@employeeappcluster.d4xux.mongodb.net/employee_db?retryWrites=true&w=majority";
+
+        public bool Connected { get; set; }
 
         public DBConnection()
         {
 
-            client = new MongoClient(connectionString);
+            try
+            {
+                client = new MongoClient(defaultConnection);
+                Connected = true;
+            }
+            catch(MongoConfigurationException)
+            {
+                Connected = false;
+            }
+
+            if(Connected)
+            {
+                db = client.GetDatabase("employee_db");
+                collection = db.GetCollection<Employee>("employee_c");
+            }
+
+        }
+
+        public DBConnection(string cString)
+        {
+            try
+            {
+                client = new MongoClient(cString);
+                Connected = true;
+            }
+            catch (MongoConfigurationException)
+            {
+                Connected = false;
+            }
 
             db = client.GetDatabase("employee_db");
             collection = db.GetCollection<Employee>("employee_c");

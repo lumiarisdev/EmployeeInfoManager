@@ -12,25 +12,40 @@
         <viewModel:HomeViewModel/>
     </UserControl.DataContext>
 
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="Employee Data Manager" HorizontalAlignment="Center" FontSize="36"/>
 
         <StackPanel Grid.Row="1" Orientation="Vertical">
-            <TextBlock Text="Search Employee: " HorizontalAlignment="Center" MinHeight="30" Margin="10" FontSize="24"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="Username: " HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                <TextBox Text="{Binding SearchInput.Username, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Left" MinWidth="100" Width="Auto"  MinHeight="20" Margin="10" FontSize="12"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="DB Connection Status: "/>
+                <TextBlock Text="{Binding StatusMessage}"/>
             </StackPanel>
-            <Button Content="Search" HorizontalAlignment="Center" Command="{Binding SearchCommand}" CommandParameter="{Binding SearchInput.Username}" MinWidth="75"  MaxWidth="150" MinHeight="30" Margin="10"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Employee Records Found: "/>
+                <TextBlock Text="{Binding EmployeeRecordsCount}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Active Employees: "/>
+                <TextBlock Text="{Binding ActiveEmployeesCount}"/>
+            </StackPanel>
+
         </StackPanel>
         
-        <TextBlock Grid.Row="2" Text="William Ziegler 2020" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="2" Text="William Ziegler 2020" HorizontalAlignment="Center" FontSize="14"/>
         
 
     </Grid>

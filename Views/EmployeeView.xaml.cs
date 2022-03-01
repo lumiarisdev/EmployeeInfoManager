@@ -26,9 +26,10 @@ namespace EmployeeInfoManager.Views
             InitializeComponent();
         }
 
-        private void EmployeeView_Loaded(object sender, RoutedEventArgs args) {
-            DataContext = new EmployeeViewModel();
-        }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+          
 
+        }
     }
 }

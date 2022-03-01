@@ -83,6 +83,9 @@ namespace EmployeeInfoManager.ViewModel
                 {
                     e.Id = new ObjectId();
                     DBConnection.Instance.collection.InsertOne(e);
+
+                    MainWindowViewModel.Instance.CurrentViewModel = new EmployeeViewModel(e);
+
                 }
                 else
                 {

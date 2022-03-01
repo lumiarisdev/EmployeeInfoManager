@@ -1,0 +1,20 @@
+﻿<Window x:Class="EmployeeInfoManager.Views.DBPromptView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmployeeInfoManager.Views"
+        xmlns:viewModels="clr-namespace:EmployeeInfoManager.ViewModel"
+        mc:Ignorable="d"
+        Title="DBPromptView" Height="250" Width="500">
+
+    <Window.DataContext>
+        <viewModels:DBPromptViewModel/>
+    </Window.DataContext>
+    
+    <StackPanel Orientation="Vertical" MaxWidth="500" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Text="DB Connection String:"/>
+        <TextBox Text="{Binding DBPromptInput, Mode=TwoWay}"/>
+        <Button Content="Submit" Command="{Binding DBPromptInputButton}" CommandParameter="{Binding DBPromptInput}"/>
+    </StackPanel>
+</Window>

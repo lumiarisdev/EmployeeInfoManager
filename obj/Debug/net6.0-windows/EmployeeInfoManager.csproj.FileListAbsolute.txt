@@ -92,3 +92,5 @@ C:\Users\William\Desktop\prog\EmployeeInfoManager\EmployeeInfoManager\bin\Debug\
 C:\Users\William\Desktop\prog\EmployeeInfoManager\EmployeeInfoManager\obj\Debug\net6.0-windows\Views\HomeView.g.cs
 C:\Users\William\Desktop\prog\EmployeeInfoManager\EmployeeInfoManager\obj\Debug\net6.0-windows\Views\HomeView.baml
 C:\Users\William\Desktop\prog\EmployeeInfoManager\EmployeeInfoManager\obj\Debug\net6.0-windows\EmployeeInfoManager.csproj.CopyComplete
+C:\Users\William\Desktop\prog\EmployeeInfoManager\obj\Debug\net6.0-windows\Views\DBPromptView.g.cs
+C:\Users\William\Desktop\prog\EmployeeInfoManager\obj\Debug\net6.0-windows\Views\DBPromptView.baml

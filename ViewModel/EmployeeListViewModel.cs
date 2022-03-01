@@ -50,14 +50,19 @@ namespace EmployeeInfoManager.ViewModel
 
         public ObservableCollection<Employee> Employees { get; set; }
 
+        public void LoadEmployees(IEnumerable<Employee> e)
+        {
+            foreach(Employee emp in e)
+            {
+                Employees.Add(emp);
+            }
+        }
+
         public void LoadEmployees()
         {
 
-            var currentEmployees = DBConnection.Instance.GetAllCurrentEmployees().ToList();
-            foreach(Employee employee in currentEmployees)
-            {
-                Employees.Add(employee);
-            }
+            var currentEmployees = DBConnection.Instance.GetAllCurrentEmployees();
+            LoadEmployees(currentEmployees);
 
         }
     }

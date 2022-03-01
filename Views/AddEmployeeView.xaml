@@ -31,7 +31,7 @@
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 10 0 10">
             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Name: "/>
-            <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.Name}" MinWidth="500" Width="Auto"/>
+            <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.Name, Mode=TwoWay}" MinWidth="500" Width="Auto"/>
         </StackPanel>
 
         <Grid Grid.Row="2">

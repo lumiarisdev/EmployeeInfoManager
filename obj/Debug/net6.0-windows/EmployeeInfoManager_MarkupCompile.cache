@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\William\Desktop\prog\EmployeeInfoManager\EmployeeInfoManager\obj\Debug\net6.0-windows\
+C:\Users\William\Desktop\prog\EmployeeInfoManager\obj\Debug\net6.0-windows\
 EmployeeInfoManager
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\William\Desktop\prog\EmployeeInfoManager\EmployeeInfoManager\App.xaml
-5-72113374
+C:\Users\William\Desktop\prog\EmployeeInfoManager\App.xaml
+62656781
 
-171375957715
+20225617212
 200218936509
-MainWindow.xaml;Views\AddEmployeeView.xaml;Views\EmployeeListView.xaml;Views\EmployeeView.xaml;Views\HomeView.xaml;
+MainWindow.xaml;Views\AddEmployeeView.xaml;Views\DBPromptView.xaml;Views\EmployeeListView.xaml;Views\EmployeeView.xaml;Views\HomeView.xaml;
 
 False
 
