@@ -12,7 +12,7 @@ namespace EmployeeInfoManager.Model
     public class Employee : BindableBase
     {
 
-        private ObjectId _id;
+        private ObjectId id;
 
         private string name;
         private string preferredName;
@@ -45,11 +45,11 @@ namespace EmployeeInfoManager.Model
         {
             get
             {
-                return _id;
+                return id;
             }
             set
             {
-                SetProperty(ref _id, value);
+                SetProperty(ref id, value);
             }
         }
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YOtnxKVARAjurIPFQP8OxeLrD4f6J/SIjU3DWxqsCFpet99NkcnffTvkPTdeqzB5oWDOJXO2ozP7+MtvK5Pv3Q==",
+  "dgSpecHash": "o723uOy3b2n4BeGZT3wkA8RFU6fvA+bGy6J2nxs6C53woMeQOnMyPoIBIoQLAEkW01kE3uwoiuDRuZ8abr2Q8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\William\\Desktop\\prog\\EmployeeInfoManager\\EmployeeInfoManager.csproj",
+  "projectFilePath": "C:\\Users\\William\\Desktop\\prog\\EmployeeInfoManager\\EmployeeInfoManager\\EmployeeInfoManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\William\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\William\\.nuget\\packages\\mongodb.bson\\2.14.1\\mongodb.bson.2.14.1.nupkg.sha512",

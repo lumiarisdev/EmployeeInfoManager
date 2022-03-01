@@ -32,6 +32,7 @@ namespace EmployeeInfoManager
         }
 
         public MongoClient client;
+        public IMongoDatabase db;
         public IMongoCollection<Employee> collection;
         private const string connectionString = "mongodb+srv://ziegw1:EMOv5e5SOsV2EZwI@employeeappcluster.d4xux.mongodb.net/employee_db?retryWrites=true&w=majority";
 
@@ -40,9 +41,19 @@ namespace EmployeeInfoManager
 
             client = new MongoClient(connectionString);
 
-            var db = client.GetDatabase("employee_db");
+            db = client.GetDatabase("employee_db");
             collection = db.GetCollection<Employee>("employee_c");
 
+        }
+
+        public IEnumerable<Employee> GetAllEmployees()
+        {
+            var list = new List<Employee>();
+            foreach(Employee employee in collection.Find(e => e.Id != null).ToList())
+            {
+                list.Add(employee);
+            }
+            return list;
         }
 
         public IEnumerable<Employee> GetAllCurrentEmployees()

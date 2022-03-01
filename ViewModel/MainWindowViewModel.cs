@@ -53,6 +53,11 @@ namespace EmployeeInfoManager.ViewModel
                     CurrentViewModel = addEmployeeViewModel;
                 break;
                 case "employeelist":
+                    employeeListViewModel.Employees.Clear();
+                    foreach(Employee e in DBConnection.Instance.GetAllEmployees())
+                    {
+                        employeeListViewModel.Employees.Add(e);
+                    }
                     CurrentViewModel = employeeListViewModel;
                 break;
                 case "home":

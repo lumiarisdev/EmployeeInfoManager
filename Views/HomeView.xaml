@@ -22,8 +22,12 @@
         <TextBlock Grid.Row="0" Text="Employee Data Manager" HorizontalAlignment="Center" FontSize="36"/>
 
         <StackPanel Grid.Row="1" Orientation="Vertical">
-            <TextBlock Text="Atlas Connection: " HorizontalAlignment="Center" MinHeight="30" Margin="10"/>
-            <Button Content="Connect and Sync" Click="Button_Click" Tag="" MaxWidth="150" MinHeight="30" Margin="10"/>
+            <TextBlock Text="Search Employee: " HorizontalAlignment="Center" MinHeight="30" Margin="10" FontSize="24"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Username: " HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                <TextBox Text="{Binding SearchInput.Username, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Left" MinWidth="100" Width="Auto"  MinHeight="20" Margin="10" FontSize="12"/>
+            </StackPanel>
+            <Button Content="Search" HorizontalAlignment="Center" Command="{Binding SearchCommand}" CommandParameter="{Binding SearchInput.Username}" MinWidth="75"  MaxWidth="150" MinHeight="30" Margin="10"/>
         </StackPanel>
         
         <TextBlock Grid.Row="2" Text="William Ziegler 2020" HorizontalAlignment="Center"/>

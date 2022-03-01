@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using EmployeeInfoManager.Model;
 using EmployeeInfoManager.ViewModel;
+using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace EmployeeInfoManager.Views
 {
@@ -32,18 +34,10 @@ namespace EmployeeInfoManager.Views
             public Employee? NewEmployee { get; set; }
         }
 
-        private void AddEmployee_Click(object sender, AddEmployee_ClickEventArgs e)
+        public void AddEmployeeView_Loaded(object sender, RoutedEventArgs e)
         {
-            // add employee to db
-            // also add to the employee list view
-            var b = (Button)sender;
-            Employee n = (Employee)b.Tag;
-            EmployeeListViewModel.Instance.Employees.Add(n);
+            DataContext = new AddEmployeeViewModel();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
