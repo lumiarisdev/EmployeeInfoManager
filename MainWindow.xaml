@@ -59,12 +59,14 @@
                         <ComboBoxItem Content="Username" IsSelected="True"/>
                         <ComboBoxItem Content="Email"/>
                         <ComboBoxItem Content="Alias"/>
+                        <ComboBoxItem Content="Name"/>
+                        <ComboBoxItem Content="Phone Number"/>
                     </ComboBox>
                     <TextBox Text="{Binding SearchInput.Username, Mode=TwoWay}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="75" Width="Auto"  MinHeight="20" MaxHeight="40" Margin="0 3 10 3"/>
                     <Button Content="Search" HorizontalAlignment="Center" Command="{Binding SearchCommand}" CommandParameter="{Binding SearchInput.Username}" MinWidth="75" Margin="0 3 10 3"/>
                 </StackPanel>
 
-                <Button Content="View Selected" Command="{Binding NavCommand}" CommandParameter="employee" Margin="0 40 10 3"/>
+                <Button Content="Open Selected" Command="{Binding NavCommand}" CommandParameter="employee" Margin="0 40 10 3"/>
 
             </StackPanel>
 

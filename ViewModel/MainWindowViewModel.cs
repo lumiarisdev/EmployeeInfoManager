@@ -16,6 +16,8 @@ namespace EmployeeInfoManager.ViewModel
         Username,
         Email,
         Alias,
+        Name,
+        PhoneNumber
     }
 
     public class MainWindowViewModel : BindableBase
@@ -156,18 +158,24 @@ namespace EmployeeInfoManager.ViewModel
             {
                 case SearchType.Username:
                 default:
-                    search = DBConnection.Instance.collection.Find(e => e.Username.Equals(s)).ToList();
+                    search = DBConnection.Instance.collection.Find(e => e.Username.Contains(s)).ToList();
                     break;
                 case SearchType.Email:
-                    search = DBConnection.Instance.collection.Find(e => e.Email.Equals(s)).ToList();
+                    search = DBConnection.Instance.collection.Find(e => e.Email.Contains(s)).ToList();
                     break;
                 case SearchType.Alias:
-                    search = DBConnection.Instance.collection.Find(e => e.Alias.Equals(s)).ToList();
+                    search = DBConnection.Instance.collection.Find(e => e.Alias.Contains(s)).ToList();
+                    break;
+                case SearchType.Name:
+                    search = DBConnection.Instance.collection.Find(e => e.Name.Contains(s)).ToList();
+                    break;
+                case SearchType.PhoneNumber:
+                    search = DBConnection.Instance.collection.Find(e => e.PhoneNumber.Contains(s)).ToList();
                     break;
             }
 
             employeeListViewModel.Employees.Clear();
-            // foreach
+
             search.ForEach(emp => employeeListViewModel.Employees.Add(emp));
             CurrentViewModel = employeeListViewModel;
 
