@@ -18,7 +18,7 @@
             <Setter Property="Margin" Value="10 0 5 0"/>
         </Style>
     </UserControl.Resources>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -26,11 +26,11 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36" Text="Add Employee"/>
+        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36" Text="New Employee"/>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 10 0 10">
             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Name: "/>
-            <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="" MinWidth="500" Width="Auto"/>
+            <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.Name}" MinWidth="500" Width="Auto"/>
         </StackPanel>
 
         <Grid Grid.Row="2">
@@ -58,116 +58,118 @@
 
             <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="DOB: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.DateOfBirth, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Preferred Name: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.PreferredName, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Phone #: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.PhoneNumber, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Alternate Phone # "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.PhoneNumber2, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Email Address: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.Email, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Alternate Email: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.Email2, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="6" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Username: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.Username, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="7" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Alias: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.Alias, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="8" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Street Address: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.Address, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="9" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Address 2: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.Address2, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="10" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="City: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.City, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="11" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Zip Code: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.ZipCode, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Date of Hire: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.DateOfHire, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Date of Separation: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.DateOfSeparation, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Active: "/>
-                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Left" IsChecked=""/>
+                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Left" IsChecked="{Binding NewEmployee.Active, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Temporary: "/>
-                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Left" IsChecked=""/>
+                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Left" IsChecked="{Binding NewEmployee.Temporary, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Expiration: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.Expiration, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Job Title: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.JobTitle, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Department: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.Department, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Manager: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.Manager, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Salary: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.Salary, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="10" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="SSN or Tax ID: "/>
-                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text=""/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding NewEmployee.SSN, Mode=TwoWay}"/>
             </StackPanel>
+
+            <Button Grid.Row="12" Grid.Column="1" Content="Submit Record" Click="Button_Click" ClickMode="Press" Tag="{Binding NewEmployee}"/>
 
         </Grid>
 
     </Grid>
-    
+
 </UserControl>

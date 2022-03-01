@@ -13,21 +13,18 @@ namespace EmployeeInfoManager.ViewModel
 
         public MainWindowViewModel()
         {
+            CurrentViewModel = homeViewModel;
             NavCommand = new CommandBase<string>(OnNav);
         }
 
         private EmployeeListViewModel employeeListViewModel = new EmployeeListViewModel();
-        
+
         private EmployeeViewModel employeeViewModel = new EmployeeViewModel();
 
         private AddEmployeeViewModel addEmployeeViewModel = new AddEmployeeViewModel();
 
-        private AddEmployeeNavViewModel addEmployeeNavViewModel = new AddEmployeeNavViewModel();
-
-        private EmployeeNavViewModel employeeNavViewModel = new EmployeeNavViewModel();
-
-        private EmployeeListNavViewModel employeeListNavViewModel = new EmployeeListNavViewModel();
-
+        private HomeViewModel homeViewModel = new HomeViewModel();
+        
         private BindableBase currentViewModel;
 
         public BindableBase CurrentViewModel
@@ -42,17 +39,6 @@ namespace EmployeeInfoManager.ViewModel
             }
         }
 
-        private BindableBase currentNavViewModel;
-
-        public BindableBase CurrentNavViewModel
-        {
-            get { return currentNavViewModel; }
-            set
-            {
-                SetProperty(ref currentNavViewModel, value);
-            }
-        }
-
         public CommandBase<string> NavCommand { get; private set; }
 
         private void OnNav(string destination)
@@ -61,19 +47,21 @@ namespace EmployeeInfoManager.ViewModel
             {
                 case "employee":
                     CurrentViewModel = employeeViewModel;
-                    CurrentNavViewModel = employeeNavViewModel;
-                break;
+                    employeeViewModel.Employee = employeeListViewModel.SelectedEmployee;
+                    break;
                 case "addEmployee":
                     CurrentViewModel = addEmployeeViewModel;
-                    CurrentNavViewModel = addEmployeeNavViewModel;
                 break;
                 case "employeelist":
-                default:
                     CurrentViewModel = employeeListViewModel;
-                    CurrentNavViewModel = employeeListNavViewModel;
+                break;
+                case "home":
+                default:
+                    CurrentViewModel = homeViewModel;
                 break;
             }
         }
+
 
     }
 }

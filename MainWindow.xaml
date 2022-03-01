@@ -26,16 +26,8 @@
             <views:AddEmployeeView/>
         </DataTemplate>
 
-        <DataTemplate DataType="{x:Type viewModels:AddEmployeeNavViewModel}">
-            <views:AddEmployeeNavView/>
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type viewModels:EmployeeNavViewModel}">
-            <views:EmployeeNavView/>
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type viewModels:EmployeeListNavViewModel}">
-            <views:EmployeeListNavView/>
+        <DataTemplate DataType="{x:Type viewModels:HomeViewModel}">
+            <views:HomeView/>
         </DataTemplate>
     </Window.Resources>
     
@@ -50,21 +42,22 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
+
             <StackPanel Grid.Row="0" Orientation="Vertical" x:Name="NavBar">
 
-                <Button Content="Employee List" Command="{Binding NavCommand}" CommandParameter="employeeList" Margin="0 10 10 3"/>
+                <Button Content="Home" Command="{Binding NavCommand}" CommandParameter="home" Margin="0 10 10 3"/>
+
+                <Button Content="Employee List" Command="{Binding NavCommand}" CommandParameter="employeelist" Margin="0 10 10 3"/>
 
                 <Button Content="Add Employee" Command="{Binding NavCommand}" CommandParameter="addEmployee" Margin="0 3 10 3"/>
 
                 <Button Content="Search Employee" Command="{Binding NavCommand}" CommandParameter="searchEmployee" Margin="0 3 10 3"/>
 
+
+                <Button Content="View Selected" Command="{Binding NavCommand}" CommandParameter="employee" Margin="0 40 10 3"/>
+
             </StackPanel>
 
-            <Grid x:Name="NavActions" Grid.Row="1">
-                <ContentControl Content="{Binding CurrentNavViewModel}"/>
-            </Grid>
-            
         </Grid>
 
         <Grid x:Name="MainContent" Grid.Column="0">

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EmployeeInfoManager.ViewModel;
 
 namespace EmployeeInfoManager.Views
 {
@@ -24,5 +25,10 @@ namespace EmployeeInfoManager.Views
         {
             InitializeComponent();
         }
+
+        private void EmployeeView_Loaded(object sender, RoutedEventArgs args) {
+            DataContext = new EmployeeViewModel();
+        }
+
     }
 }

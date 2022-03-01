@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EmployeeInfoManager.Model;
+using EmployeeInfoManager.ViewModel;
 
 namespace EmployeeInfoManager.Views
 {
@@ -23,6 +25,25 @@ namespace EmployeeInfoManager.Views
         public AddEmployeeView()
         {
             InitializeComponent();
+        }
+
+        public class AddEmployee_ClickEventArgs : EventArgs
+        {
+            public Employee? NewEmployee { get; set; }
+        }
+
+        private void AddEmployee_Click(object sender, AddEmployee_ClickEventArgs e)
+        {
+            // add employee to db
+            // also add to the employee list view
+            var b = (Button)sender;
+            Employee n = (Employee)b.Tag;
+            EmployeeListViewModel.Instance.Employees.Add(n);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

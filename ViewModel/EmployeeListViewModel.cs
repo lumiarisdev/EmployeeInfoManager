@@ -5,14 +5,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EmployeeInfoManager.Model;
+using EmployeeInfoManager.Command;
+using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace EmployeeInfoManager.ViewModel
 {
     public class EmployeeListViewModel : BindableBase
     {
 
+        private Employee selectedEmployee;
+        public Employee SelectedEmployee
+        {
+            get { return selectedEmployee; }
+            set { 
+                SetProperty(ref selectedEmployee, value);
+            }
+        }
+
+        private static EmployeeListViewModel instance;
+        public static EmployeeListViewModel Instance
+        {
+            get
+            {
+                if(instance == null)
+                {
+                    instance = new EmployeeListViewModel();
+                }
+                return instance;
+            }
+            set
+            {
+                instance = value;
+            }
+        }
+
         public EmployeeListViewModel()
         {
+
+            Employees = new ObservableCollection<Employee>();
+
             LoadEmployees();
         }
 
@@ -20,13 +52,13 @@ namespace EmployeeInfoManager.ViewModel
 
         public void LoadEmployees()
         {
-            ObservableCollection<Employee> employees = new ObservableCollection<Employee>
+
+            var currentEmployees = DBConnection.Instance.GetAllCurrentEmployees().ToList();
+            foreach(Employee employee in currentEmployees)
             {
-                new Employee { Name = "Joe Schmoe", Username = "jschmoe011", Email = "joe@schmoe.net" },
-            };
+                Employees.Add(employee);
+            }
 
-            Employees = employees;
         }
-
     }
 }

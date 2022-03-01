@@ -10,19 +10,36 @@
 
     <UserControl.Resources>
         <DataTemplate DataType="{x:Type model:Employee}">
-            <StackPanel Orientation="Vertical">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Name: "/>
-                    <TextBlock Text="{Binding Name}"/>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel MinWidth="150" Margin="10" Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Name: "/>
+                        <TextBlock Text="{Binding Name}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Username: "/>
+                        <TextBlock Text="{Binding Username}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Email: "/>
+                        <TextBlock Text="{Binding Email}"/>
+                    </StackPanel>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Username: "/>
-                    <TextBlock Text="{Binding Username}"/>
+                <StackPanel MinWidth="150" Margin="10" Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Phone Number: "/>
+                        <TextBlock Text="{Binding PhoneNumber}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Alternate Phone: "/>
+                        <TextBlock Text="{Binding PhoneNumber2}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Alternate Email: "/>
+                        <TextBlock Text="{Binding Email2}"/>
+                    </StackPanel>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Email: "/>
-                    <TextBlock Text="{Binding Email}"/>
-                </StackPanel>
+                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" IsChecked="{Binding Active}"/>
             </StackPanel>
         </DataTemplate>
     </UserControl.Resources>
@@ -31,12 +48,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <TextBlock Text="Employee List" MinHeight="30" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
 
-        <ListBox ItemsSource="{Binding Employees}" Grid.Row="1"/>
-        
+        <ListBox ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}" Grid.Row="1"/>
+
     </Grid>
 
 </UserControl>

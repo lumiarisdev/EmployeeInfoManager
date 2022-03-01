@@ -7,22 +7,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\AddEmployeeNavView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\AddEmployeeView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\EmployeeListNavView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\EmployeeListView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\EmployeeNavView.xaml.cs">
+    <Compile Update="Views\EmployeeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\EmployeeView.xaml.cs">
+    <Compile Update="Views\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -30,22 +24,16 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\AddEmployeeNavView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Views\AddEmployeeView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\EmployeeListNavView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\EmployeeListView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\EmployeeNavView.xaml">
+    <Page Update="Views\EmployeeView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\EmployeeView.xaml">
+    <Page Update="Views\HomeView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

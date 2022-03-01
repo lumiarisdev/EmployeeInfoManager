@@ -24,5 +24,10 @@ namespace EmployeeInfoManager
         {
             InitializeComponent();
         }
+
+        private void EmployeeView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
